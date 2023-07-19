@@ -450,9 +450,14 @@ height: 414px;
 background: url(./assets/img/map.png), lightgray 50% / cover no-repeat;
 }
 
-.library-card {
+.library-card {    
 width: 1440px;
 height: 614px;
+}
+
+.cards {
+display: flex;
+justify-content: space-between;
 }
 
 .find-card {
@@ -482,6 +487,7 @@ letter-spacing: 0.6px;
 }
 
 .white-bg {
+    position: relative;
     width: 600px;
     height: 386px;
     flex-shrink: 0;
@@ -515,7 +521,7 @@ input {
 width: 520px;
 height: 66px;
 flex-shrink: 0;
-margin: 20px;
+margin: 90px 20px 116px 20px;
 border-radius: 10px;
 background: #FFF;
 }
@@ -533,6 +539,9 @@ letter-spacing: 0.6px;
 }
 
 button.check {
+position: absolute;  
+left: 179px;
+bottom: 30px;  
 width: 242px;
 height: 44px;  
 margin-left: auto; 
@@ -551,17 +560,22 @@ letter-spacing: 1px;
 }
 
 .get-card {
+position: relative;
 width: 456px;
 height: 253px;
 flex-shrink: 0;
-background-color: aquamarine;
 }
 
 .get-card h4 {
+position: absolute;
+top: 0;
+right: 0;
+margin: 0;
 width: 220px;
 height: 33px;
+margin-right: 0;
 color: #000;
-text-align: center;
+text-align: end;
 font-family: Forum;
 font-size: 30px;
 font-style: normal;
@@ -571,6 +585,11 @@ letter-spacing: 0.6px;
 }
 
 .get-card p {
+position: absolute;
+top: 68px;
+bottom: 65px;
+right: 0;
+left: 0;
  width: 456px;
  height: 120px;   
  color: #000;
@@ -581,6 +600,14 @@ font-style: normal;
 font-weight: 400;
 line-height: 40px; /* 200% */
 letter-spacing: 0.4px;
+}
+
+.buttons {
+ display: flex; 
+ justify-content: right; 
+ position: absolute; 
+ bottom: 0;
+ right: 0;
 }
 
 .buttons button {
