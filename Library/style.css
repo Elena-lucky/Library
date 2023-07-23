@@ -3,7 +3,7 @@
 }
 
 body {
-    max-width: 1440px;
+    width: 1440px;
     margin: 0 auto;
     padding: 0; 
 }
@@ -178,9 +178,6 @@ line-height: normal;
 }
 
 .seasons {
-display: flex;
-width: 50%;
-justify-content: space-between;
 margin-left: 20px; 
 margin-bottom: 40px;   
 width: 700px;
@@ -188,15 +185,82 @@ height: 24px;
 flex-shrink: 0;
 }
 
-.inside-seasons {
+.seasons p {
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+    height: 24px;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+label.radio {
 color: #000;
 font-family: Inter;
 font-size: 20px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
-margin-right: 10px;
+margin-right: 45px;
 }
+
+
+
+/*.radio input { 
+display: none;
+}*/
+  /*.radio span {
+   
+   /*position: relative; /* Относительное позиционирование */
+   /*display: inline-block; /* Строчно-блочный элемент */
+ /* width: 17px; 
+  height: 17px; /* Размеры */
+  /*background: white; /* Серый цвет фона */
+ /* border-radius: 50%; /* Круглый переключатель */
+ /* outline: #000;
+   }*/
+
+  /* .radio input:checked + span { 
+    background: #F44336; /* Красный цвет фона */
+   
+   /* Добавляем белую точку по центру */
+ /*  .radio input:checked + span::before { 
+    content: '';
+    position: absolute;
+    left: 6px; top: 6px;
+    background: #fff;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+   }*/
+
+
+.seasons label {
+color: #000;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.seasons input {
+accent-color: black;
+   margin: 0 20px 0 0;
+   padding: 0;
+   width: 17px;
+   height: 17px;
+ } 
+     
+ /*    button:hover,
+  button:focus {
+    color: #999;
+  }
+  
+  button:active {
+    background-color: white;
+    color: black;
+    outline: 1px solid black;
+  }*/
 
 .favorites-items {
 display: flex;
@@ -295,6 +359,27 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 letter-spacing: 1px;
+transition: 1s linear;
+}
+
+button:hover {
+border-radius: 2px;
+border: 1px solid #BB945F;
+background: #BB945F;
+}
+
+[disabled=disabled] {
+    border-radius: 2px;
+    border: 1px solid #BB945F;
+    color: #BB945F;
+text-align: center;
+font-family: Inter;
+font-size: 10px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 1px;
+pointer-events: none;
 }
 
 .books {
@@ -334,27 +419,59 @@ font-style: normal;
 font-weight: 400;
 line-height: 40px; /* 200% */
 letter-spacing: 2px;
-text-transform: capitalize;
+/*text-transform: capitalize;*/
+}
+
+span.lowercase {
+    color: #000;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 40px;
+letter-spacing: 2px;
+text-transform: lowercase;
+}
+
+span.uppercase {
+    color: #000;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 40px;
+letter-spacing: 2px;
+text-transform: uppercase;
 }
 
 .card {
-display: inline-flex;
+display: flex;
 flex-direction: column;
-justify-content: center;
-align-items: flex-start;
+justify-content: space-between;
+align-items: stretch;
 width: 45%;
 gap: 40px;  
 }
 
-.line {
+.line1 {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    text-align: center;
     align-items: center;
     gap: 60px;
 }
 
-h2.section-subtitle {
-text-align: center;    
+.line2 {
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    align-items: center;
+}
+
+h3.section-subtitle {
+margin: 0;
+padding: 0;    
+text-align: left;    
 color: #BB945F;
 font-family: Forum;
 font-size: 40px;
@@ -362,18 +479,20 @@ font-style: normal;
 font-weight: 400;
 line-height: 40px; /* 100% */
 letter-spacing: 2px;
-text-transform: capitalize;   
+text-transform: capitalize;  
 }
 
 hr.beige {
 width: 100px;
 height: 1px;
+margin: 0 60px;
+padding: 0;
 background: #BB945F;
 }
 
 .card.second {
 display: flex;
-width: 482px;
+width: 45%;
 flex-direction: column;
 justify-content: center;
 align-items: flex-end;
@@ -420,7 +539,8 @@ letter-spacing: 2px;
 text-transform: capitalize;  
 }
 
-.text-info p {
+.text-info p, a {
+display: inline-block;    
 color: #000;
 text-align: left;
 margin: 20px 0 0 0;
@@ -431,6 +551,7 @@ font-weight: 400;
 line-height: 40px; /* 200% */
 letter-spacing: 2px;
 text-transform: capitalize;
+text-decoration: none;
 }
 
 .bold {
