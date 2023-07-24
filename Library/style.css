@@ -97,15 +97,16 @@ a {
 
 .welcome-container.welcome-container {
     position: absolute;
-    top: 255px;
+    top: 220px;
     left: 0;
-    width: 520px;
-    height: 150px; 
-    margin: 35px 40px;
+    width: 600px;
+height: 220px; 
+    padding: 35px 40px;
     background: #0C0C0E;
 }
 
-#text {
+.welcome-container p {
+margin: 0;    
 color: #FFF;
 text-align: center;
 font-family: Forum;
@@ -304,7 +305,7 @@ letter-spacing: 2px;
 text-transform: capitalize;
 }
 
-hr#upper-title {
+hr.upper-title1 {
 width: 60px;
 height: 1px;
 margin-left: 20px;
