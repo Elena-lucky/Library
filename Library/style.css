@@ -769,12 +769,20 @@ font-weight: 400;
 line-height: 20px; /* 133.333% */
 }
 
-p.place {
+a.place {
 width: 229px;
 height: 40px;
 margin: 0;
 flex-shrink: 0;
 text-align: left;
+color: #FFF;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; /* 133.333% */
+text-decoration: none;
+letter-spacing: normal;
 }
 
 p.time {
@@ -838,7 +846,7 @@ margin: 0;
 flex-shrink: 0;
 }
 
-.rss p {
+.rss a, .rss p {
     display: flex;
 height: 22px;
 margin: 0;
