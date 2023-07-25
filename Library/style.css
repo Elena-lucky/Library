@@ -153,11 +153,14 @@ text-transform: capitalize;
 hr {
     width: 50px;
     height: 1px;
+    margin-top: 20px;
+    margin-bottom: 0;
     border: none;
     background-color: #0C0C0E;
 }
 
 .section-about {
+    margin-top: 40px;
 color: #000;
 text-align: center;
 font-family: Inter;
@@ -175,7 +178,7 @@ height: 837px;
 .content {
     display: flex;
     justify-content: space-between;
-    margin: 20px;
+    margin: 20px 20px 0 20px;
     padding-bottom: 40px;
 }
 
@@ -189,7 +192,7 @@ gap: 25px;
 .pagination.pagination {
 display: block;
 text-align: center;
-margin: 0 auto;
+margin: 0 auto 0 auto;
 width: 68px;
 height: 16px;
 }
@@ -204,8 +207,13 @@ font-weight: 700;
 line-height: normal;
 }
 
+p.section-favorites {
+    padding-left: 20px;
+    margin-top: 40px;
+}
+
 .seasons {
-margin-left: 20px; 
+margin-left: 0; 
 margin-bottom: 40px;   
 width: 700px;
 height: 24px;
@@ -217,7 +225,7 @@ flex-shrink: 0;
     justify-content: space-between;
     width: 700px;
     height: 24px;
-    margin: 0;
+    margin: 40px 0 20px 30px;
     flex-shrink: 0;
 }
 
@@ -228,7 +236,7 @@ font-size: 20px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
-margin-right: 45px;
+margin: 0;
 }
 
 
@@ -266,7 +274,7 @@ color: #000;
 font-family: Inter;
 font-size: 20px;
 font-style: normal;
-font-weight: 700;
+font-weight: 400;
 line-height: normal;
 }
 
@@ -293,6 +301,9 @@ accent-color: black;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;  
+margin: 20px;
+padding-right: 40px;
+padding-bottom: -20px;
 width: 1400px;
 height: 1150px;
 flex-shrink: 0;
@@ -300,7 +311,7 @@ flex-shrink: 0;
 
 .bg-description {
     position: relative;
-    margin-left: 20px;    
+    margin: 0 0 40px 0;   
     width: 550px;
     height: 555px;
     flex-shrink: 0;
@@ -325,6 +336,7 @@ text-transform: capitalize;
 hr.upper-title1 {
 width: 60px;
 height: 1px;
+margin-top: 0;
 margin-left: 20px;
 margin-bottom: 20px;
 background: #BB945F;
@@ -357,7 +369,7 @@ text-transform: capitalize;
 }
 
 p.content {
-margin: 0 0 0 20px;   
+margin: 20px 0 0 20px;   
 padding: 0;
 width: 355px;
 height: 320px;    
@@ -372,7 +384,8 @@ text-transform: capitalize;
 }
 
 button {
-margin-left: 20px;    
+margin-left: 20px;  
+margin-top: 15px;
 width: 75px;
 height: 30px;
 flex-shrink: 0;   
@@ -420,12 +433,7 @@ flex-shrink: 0;
 
 .coffee {
 padding: 20px 20px 40px 20px;
-display: flex;
 width: 1440px;
-padding: 20px 20px 40px 20px;
-flex-direction: column;
-align-items: center;
-gap: 40px;
 }
 
 .menu {
@@ -433,11 +441,15 @@ width: 1400px;
 height: 520px;
 display: flex;
 justify-content: space-between;
+/*gap: 480px;
+/*flex-direction: column;
+align-items: center;
+gap: 40px;*/
 }
 
 p.section-content {
 padding: 0;
-margin: 0;
+margin: 40px 0;
 color: #000;
 text-align: center;
 font-family: Inter;
@@ -476,8 +488,11 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: stretch;
-width: 45%;
-gap: 40px;  
+/*width: 438px;
+height: 520px;*/
+gap: 40px; 
+margin: 0;
+padding: 0; 
 }
 
 .line1 {
@@ -486,6 +501,19 @@ gap: 40px;
     text-align: center;
     align-items: center;
     gap: 60px;
+    flex-shrink: 0;
+}
+
+p.section-menu {
+    margin: 0;
+    color: #000;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 40px; /* 200% */
+letter-spacing: 2px;
+text-transform: capitalize;
 }
 
 .line2 {
@@ -493,6 +521,7 @@ gap: 40px;
     justify-content: flex-end;
     text-align: center;
     align-items: center;
+    gap: 60px;
 }
 
 h3.section-subtitle {
@@ -512,23 +541,25 @@ text-transform: capitalize;
 hr.beige {
 width: 100px;
 height: 1px;
-margin: 0 60px;
 padding: 0;
+margin: 0;
 background: #BB945F;
+text-align: center ;
 }
 
-.card.second {
+.card-second {
 display: flex;
-width: 45%;
 flex-direction: column;
-justify-content: center;
+justify-content: space-between;
 align-items: flex-end;
+margin: 0;
+padding: 0;
 gap: 40px;
 }
 
 .contacts {
 width: 1440px;
-padding: 20px 20px 40px 20px;
+padding: 0 20px 40px 20px;
 flex-direction: column;
 align-items: flex-start;
 gap: 40px;
@@ -545,15 +576,15 @@ margin-top: 40px;
 display: flex;
 flex-direction: column;   
 justify-content: left; 
-width: 503px;
-height: 380px;
+/*width: 503px;
+height: 380px;*/
 margin: 0;
 padding: 0;
 }
 
 .text-info h3 {
-width: 282px;
-height: 40px; 
+/*width: 282px;
+height: 40px; */
 color: #000;
 text-align: left;
 margin: 0;
@@ -564,6 +595,7 @@ font-weight: 700;
 line-height: 40px; /* 200% */
 letter-spacing: 2px;
 text-transform: capitalize;  
+margin-bottom: 20px;
 }
 
 .text-info p, a {
@@ -579,6 +611,10 @@ line-height: 40px; /* 200% */
 letter-spacing: 2px;
 text-transform: capitalize;
 text-decoration: none;
+}
+
+a.titul-info {
+    margin: 0;
 }
 
 .bold {
@@ -606,6 +642,7 @@ height: 614px;
 .cards {
 display: flex;
 justify-content: space-between;
+margin: 10px 20px 40px 20px;
 }
 
 .find-card {
@@ -614,14 +651,16 @@ flex-direction: column;
 justify-content: space-between;   
 width: 600px;
 height: 453px;
+margin: 0;
+padding: 0;
 flex-shrink: 0;
 }
 
 .find-card h3 {
 display: flex; 
 justify-content: center;   
-width: 324px;
-height: 36px;
+/*width: 324px;
+height: 36px;*/
 margin-left: auto;
 margin-right: auto;
 text-align: center;
@@ -655,7 +694,8 @@ background: #BB945F;
 
 p.gold-inside {
 height: 50px; 
-margin: 20px;   
+margin: 20px;  
+padding-top: 20px; 
 color: #000;
 font-family: Forum;
 font-size: 30px;
@@ -665,11 +705,11 @@ line-height: 50px; /* 166.667% */
 letter-spacing: 0.6px;
 }
 
-input {
+input#name, input#number {
 width: 520px;
 height: 66px;
 flex-shrink: 0;
-margin: 90px 20px 116px 20px;
+margin: 20px 20px 5px 20px;
 border-radius: 10px;
 background: #FFF;
 }
@@ -694,7 +734,6 @@ width: 242px;
 height: 44px;  
 margin-left: auto; 
 margin-right: auto; 
-padding: 10px 40px;
 border-radius: 2px;
 border: 1px solid #0C0C0E;
 color: #0C0C0E;
@@ -711,6 +750,7 @@ letter-spacing: 1px;
 position: relative;
 width: 456px;
 height: 253px;
+margin-top: 30px;
 flex-shrink: 0;
 }
 
@@ -719,7 +759,7 @@ position: absolute;
 top: 0;
 right: 0;
 margin: 0;
-width: 220px;
+/*width: 220px;*/
 height: 33px;
 margin-right: 0;
 color: #000;
@@ -734,8 +774,8 @@ letter-spacing: 0.6px;
 
 .get-card p {
 position: absolute;
-top: 68px;
-bottom: 65px;
+top: 48px;
+bottom: 85px;
 right: 0;
 left: 0;
  width: 456px;
@@ -831,11 +871,14 @@ align-items: center;
 
 .social-media {
     display: flex;
-    width: 102px;
-    height: 24px;
+   /* width: 102px;
+    height: 24px;*/
+    margin: 0;
+    padding: 0;
     justify-content: center;
     align-items: flex-start;
     gap: 15px;
+   
 }
 
 .smm {
@@ -858,7 +901,7 @@ line-height: 20px; /* 133.333% */
 .footer hr {
     width: 1400px;
 height: 1px;
-margin-top: 30px;
+margin-top: 20px;
 background: #FFF;
 }
 
@@ -874,14 +917,10 @@ flex-shrink: 0;
 }
 
 .rss a, .rss p {
-    display: flex;
-height: 22px;
+/*height: 22px;*/
 margin: 0;
 padding: 0;
-flex-direction: column;
-justify-content: center;
-flex-shrink: 0;
-    color: #FFF;
+color: #FFF;
 text-align: center;
 font-family: Inter;
 font-size: 20px;
@@ -892,12 +931,9 @@ letter-spacing: 2px;
 }
 
 rss.a {
-    display: flex;
-width: 113px;
-height: 22px;
-flex-direction: column;
-justify-content: center;
-flex-shrink: 0;
+  
+/*width: 113px;
+height: 22px;*/
 color: #FFF;
 text-align: center;
 text-decoration: none;
