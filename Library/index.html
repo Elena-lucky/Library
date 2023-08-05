@@ -31,11 +31,11 @@
   </header>
 
   <main>
-   <div class="welcome">
+   <section class="welcome">
      <div class="welcome-container">
-      <p>Welcome<br>to the brooklyn<br>library</p>
+      <h3>Welcome<br>to the brooklyn<br>library</h3>
      </div>  
-    </div>
+    </section>
 
     <section class="about" id="about">
       <h2 class="section-title">About</h2>
@@ -46,7 +46,17 @@
        <img src="./assets/img/image2.png" alt="library" class="inside">
        <img src="./assets/img/image3.png" alt="library" class="inside">
       </div> 
-      <img src="./assets/img/Carousel-pagination.svg" alt="pagination" class="pagination">
+      <div class="paginations">
+        <div class="pagination">
+          <button class="buttonPagination buttonPaginationOne"></button>
+        </div>
+        <div class="pagination">
+          <button class="buttonPagination"></button>
+        </div>
+        <div class="pagination">
+          <button class="buttonPagination"></button>
+        </div>
+      </div>  
     </section>
 
     <section class="favorites" id="favorites">
@@ -54,12 +64,16 @@
       <hr>
       <p class="section-favorites">Pick favorites of season</p>
       <div class="seasons">
-       <p><label class="radio"><input type="radio" name="inside-seasons" checked><span></span>Winter</label>
-        <label class="radio"><input type="radio" name="inside-seasons"><span></span>Spring</label>
-        <label class="radio"><input type="radio" name="inside-seasons"><span></span>Summer</label>
-        <label class="radio"><input type="radio" name="inside-seasons"><span></span>Autumn</label></p>
-     </div>
-
+         <form action="#">
+            <div class="radio-wrapper">
+               <label class="favorites-label"><input name="favorites" type="radio" value="winter" checked><span class="radio-text">Winter</span></label>
+               <label class="favorites-label"><input name="favorites" type="radio" value="spring"><span class="radio-text">Spring</span></label>
+                <label class="favorites-label"><input name="favorites" type="radio" value="summer"><span class="radio-text">Summer</span></label>
+                <label class="favorites-label"><input name="favorites" type="radio" value="autumn"><span class="radio-text">Autumn</span></label>
+                </div>
+          </form>
+      </div>
+        
      <div class="favorites-items">
        <div class="bg-description">
          <h3 class="upper-title">Staff Picks</h3>
@@ -121,32 +135,32 @@
            <h3 class="section-subtitle">Coffee & Tea</h3>
            <div class="line1">
              <p class="section-menu">Cold Brew Coffee</p>
-             <hr class="beige">
+             <div class="liner-beige"></div>
              <p class="section-menu">&#36;3</p>
             </div>
            <div class="line1">
              <p class="section-menu">French Press Pot</p>
-             <hr class="beige">
+             <div class="liner-beige"></div>
              <p class="section-menu">&#36;5</p>
            </div>
            <div class="line1">
              <p class="section-menu">Espresso</p>
-             <hr class="beige">
+             <div class="liner-beige"></div>
              <p class="section-menu">&#36;2</p>
            </div>
            <div class="line1">
              <p class="section-menu">Cappuccino</p>
-             <hr class="beige">
+             <div class="liner-beige"></div>
              <p class="section-menu">&#36;4</p>
            </div>
             <div class="line1">
              <p class="section-menu">Hot tea</p>
-             <hr class="beige">
+             <div class="liner-beige"></div>
              <p class="section-menu">&#36;2</p>
            </div>
            <div class="line1">
              <p class="section-menu">Cold tea</p>
-             <hr class="beige">
+             <div class="liner-beige"></div>
              <p class="section-menu">&#36;2</p>
            </div>
          </div> 
@@ -154,34 +168,34 @@
          <div class="card-second">
            <h3 class="section-subtitle">Desserts & Cakes</h3>
            <div class="line2">
-             <p class="section-menu">Forest Gateau</p>
-             <hr class="beige">
-             <p class="section-menu">&#36;16</p>
+             <p class="section-menu-dess">Forest Gateau</p>
+             <div class="liner-beige"></div>
+             <p class="section-menu-dess">&#36;16</p>
            </div>
            <div class="line2">
-             <p class="section-menu">Blue Moon</p>
-             <hr class="beige">
-             <p class="section-menu">&#36;16</p>
+             <p class="section-menu-dess">Blue Moon</p>
+             <div class="liner-beige"></div>
+             <p class="section-menu-dess">&#36;16</p>
            </div>
            <div class="line2">
-             <p class="section-menu">Truffle Cake</p>
-             <hr class="beige">
-             <p class="section-menu">&#36;15</p>
+             <p class="section-menu-dess">Truffle Cake</p>
+             <div class="liner-beige"></div>
+             <p class="section-menu-dess">&#36;15</p>
            </div>
            <div class="line2">
-             <p class="section-menu">Chocolate Cake</p>
-             <hr class="beige">
-             <p class="section-menu">&#36;18</p>
+             <p class="section-menu-dess">Chocolate Cake</p>
+             <div class="liner-beige"></div>
+             <p class="section-menu-dess">&#36;18</p>
            </div>
            <div class="line2">
-             <p class="section-menu">Poet’s Dream Cake</p>
-             <hr class="beige">
-             <p class="section-menu">&#36;16</p>
+             <p class="section-menu-dess">Poet’s Dream Cake</p>
+             <div class="liner-beige"></div>
+             <p class="section-menu-dess">&#36;16</p>
            </div>
            <div class="line2">
-             <p class="section-menu">Pineapple Cake</p>
-             <hr class="beige">
-             <p class="section-menu">&#36;14</p>
+             <p class="section-menu-dess">Pineapple Cake</p>
+             <div class="liner-beige"></div>
+             <p class="section-menu-dess">&#36;14</p>
            </div>
          </div> 
       </div>
@@ -264,7 +278,7 @@
       <div class="rss">
         <p>2023</p>
         <a href="https://rs.school/js/" target="_blank">The Rolling Scopes School</a>
-        <a href="https://github.com/Elena-lucky" target="_blank">Elena Ivanova</a>
+        <a href="https://github.com/Elena-lucky" target="_blank">E. Ivanova</a>
       </div>
   </footer>
   <script src="/index.js"></script>
