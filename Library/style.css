@@ -253,8 +253,12 @@ height: 837px;
     padding-bottom: 40px;
 }
 
+.carret {
+    display: none;
+}
+
 .inside {
-width: 450px;
+max-width: 450px;
 height: 560px;
 flex-shrink: 0;
 gap: 25px;
@@ -1047,7 +1051,7 @@ line-height: 40px; /* 200% */
 letter-spacing: 2px;
 }
 
-@media screen and (max-width: 1240px)  {
+@media screen and (max-width: 1430px)  {
     .about {
         height: auto;
     }
@@ -1055,6 +1059,9 @@ letter-spacing: 2px;
         width: 33%;
         height: auto;
     }
+
+@media screen and (max-width: 1240px)  {
+    
     .bg-description {
         width: 45%;
        }
@@ -1082,7 +1089,13 @@ letter-spacing: 2px;
         height: auto;
         left: 85%; 
         top: 70%;
-       }  
+       } 
+       .get-card {
+        width: 40%;
+        }
+        .get-card p {
+            width: 100%;
+        }
 }
 @media screen and (max-width: 1024px) {
     .header__burger-btn {
@@ -1164,6 +1177,10 @@ letter-spacing: 2px;
         width: 40%;
         height: auto;
     }
+    p.gold-inside {
+        font-size: 20px;;
+    }
+
     .white-bg {
         width: 100%;
         height: auto;
@@ -1197,6 +1214,12 @@ letter-spacing: 2px;
         max-width: 768px; 
         overflow-x: hidden;
     }
+    img.icon-profile {
+        right: 92px;
+    }
+    .nav-list {
+        margin-top: 49px;
+        }
     .about {
         margin: 0 30px;
     }
@@ -1205,9 +1228,50 @@ letter-spacing: 2px;
         margin-right: 20px;
     }
     .content {
-        display: block;
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 20px;
     }
-
+    .carret {
+        display: inline-flex;
+        padding-top: 40px;
+    }
+    .pagination {
+        position: relative;
+    }
+    .buttonPaginationOne {
+        position: absolute;
+    }
+    .buttonPaginationOne::before {
+      content: " ";
+       position: absolute;
+       left: -25px;
+       top: 0;
+       width: 16px;
+    height: 16px;
+    margin: 0;
+    background-color: #0C0C0E;
+    border-radius: 50%;
+    transition: none;
+    cursor: pointer;
+    } 
+    .buttonPaginationOne::after {
+        content: " ";
+         position: absolute;
+        right: -78px;
+        top: 0;
+         width: 16px;
+      height: 16px;
+      margin: 0;
+      background-color: #0C0C0E;
+      border-radius: 50%;
+      transition: none;
+      cursor: pointer;
+      } 
+      .favorites {
+        margin-top: 35px;
+      }
+     
     img.inside {
     display: block;
     width: 450px;
@@ -1224,13 +1288,17 @@ letter-spacing: 2px;
    .bg-description {
     width: 550px;
     height: 555px;
-    margin: 0 0 40px 49px;
+    margin: 0 0 40px 69px;
     padding: 0;
    }
    img.books {
     width: 200px;
     height: 300px;
+    left: 390px;
     flex-shrink: 0;
+   }
+   .coffee {
+    padding-top: 0;
    }
    .menu {
     display: block;
@@ -1242,10 +1310,19 @@ letter-spacing: 2px;
     .card-second {
         width: 100%;
     }
+    .map {
+        width: 100%;
+        height: auto;
+    }
     .library-card {
      height: auto;
+     margin-top: 65px;
      }
-
+     .gold-bg {
+        margin: 20px 20px 89px 20px;
+        width: 560px;
+        height: 272px;
+     }
     .cards {
         display: block;
         height: auto;
@@ -1255,6 +1332,18 @@ letter-spacing: 2px;
             height: auto;
             flex-shrink: 0;
             margin: 0 auto 21px;
+        }
+        p.gold-inside {
+            font-size: 30px;
+        }
+        input#name, input#number {
+            width: 520px;
+            height: 66px;
+        }
+        button.check {
+           text-align: center;
+            width: 40%;
+            margin-left: 120px;
         }
         .get-card {
             width: 600px;
@@ -1286,6 +1375,4 @@ letter-spacing: 2px;
             width: 100%;
         }
 }
-
-
- 
+}
