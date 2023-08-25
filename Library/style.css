@@ -249,12 +249,27 @@ height: 837px;
 .content {
     display: flex;
     justify-content: space-between;
+    flex-wrap: nowrap;
     margin: 20px 20px 0 20px;
     padding-bottom: 40px;
+    overflow: hidden;
 }
 
 .carret {
     display: none;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    margin: 20px 20px 0 0;
+}
+
+.images-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    margin: 0;
+    width: 100%;
 }
 
 .inside {
@@ -263,6 +278,52 @@ height: 560px;
 flex-shrink: 0;
 gap: 25px;
 }
+
+.carousel {
+    position: relative;
+    left: -475px;
+    width: 2390px;
+  }
+
+  #item-left {
+    max-width: 1420px;
+    position: relative;
+    left: -1400px;
+  }
+
+  #item-active {
+    max-width: 1420px;
+    position: relative;
+    left: -950px;
+  }
+
+  @keyframes move-right {
+    from {left: -475px;}
+    to {left: -950px;}
+  }
+  
+  .transition-right {
+    animation-name: move-right;
+    animation-duration: 5s;
+  }
+  
+  @keyframes move-left {
+    from {left: -475x;}
+    to {left: 0px;}
+  }
+  
+  .transition-left {
+    animation-name: move-left;
+    animation-duration: 5s;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+/*.inside:nth-child(5), .inside:nth-child(6) {
+    display: none;
+}*/
 
 .paginations {
 display: flex;
@@ -1055,10 +1116,9 @@ letter-spacing: 2px;
     .about {
         height: auto;
     }
-     img.inside {
-        width: 33%;
-        height: auto;
-    }
+     img.inside, .images-items {
+        width: 95%;
+     }
 
 @media screen and (max-width: 1240px)  {
     
@@ -1114,7 +1174,7 @@ letter-spacing: 2px;
     .nav {
         z-index: 3;
         position: absolute;
-        right: -350px;
+        right: -332px;
         top: 0;
         width: 332px;
         height: 570px;

@@ -50,22 +50,38 @@
         <h2 class="section-title">About</h2>
        <hr>
        <p class="section-about">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside </p>
-       <div class="content">
-         <img src="./assets/img/Carret_Left.svg" alt="carret" class="carret">
-         <img src="./assets/img/image1.png" alt="library" class="inside">
-         <img src="./assets/img/image2.png" alt="library" class="inside">
-         <img src="./assets/img/image3.png" alt="library" class="inside">
-         <img src="./assets/img/Carret_Right.svg" alt="carret" class="carret">
-       </div> 
+       <img src="./assets/img/Carret_Left.svg" alt="carret" class="carret" id="btn-left">
+       <div class="carousel-wrapper" id="carousel-wrapper">
+          <div class="carousel" id="carousel">
+            <div class="content">
+              <div class="images-items" id="item-left">
+               <img src="./assets/img/image1.png" alt="library" class="inside">
+               <img src="./assets/img/image2.png" alt="library" class="inside">
+               <img src="./assets/img/image3.png" alt="library" class="inside">
+              </div>
+              <div class="images-items" id="item-active">
+               <img src="./assets/img/image2.png" alt="library" class="inside">
+               <img src="./assets/img/image3.png" alt="library" class="inside">
+               <img src="./assets/img/image4.png" alt="library" class="inside">
+              </div>
+              <div class="images-items" id="item-right">
+               <img src="./assets/img/image3.png" alt="library" class="inside">
+               <img src="./assets/img/image4.png" alt="library" class="inside">
+               <img src="./assets/img/image5.png" alt="library" class="inside">
+              </div> 
+            </div> 
+          </div>
+       </div>
+       <img src="./assets/img/Carret_Right.svg" alt="carret" class="carret" id="btn-right">
        <div class="paginations">
          <div class="pagination">
-           <button class="buttonPagination buttonPaginationOne"></button>
+           <button class="buttonPagination buttonPaginationOne" id="pagin-left"></button>
          </div>
          <div class="pagination">
            <button class="buttonPagination"></button>
          </div>
          <div class="pagination">
-           <button class="buttonPagination"></button>
+           <button class="buttonPagination" id="pagin-right"></button>
          </div>
        </div>  
       </div>
