@@ -253,13 +253,12 @@ height: 837px;
     margin: 20px 20px 0 20px;
     padding-bottom: 40px;
     overflow: hidden;
-}
-
-.carret {
-    display: none;
+    gap: 25px;
 }
 
 .carousel-wrapper {
+    position: relative;
+    max-width: 1440px;
     overflow: hidden;
     margin: 20px 20px 0 0;
 }
@@ -276,7 +275,6 @@ height: 837px;
 max-width: 450px;
 height: 560px;
 flex-shrink: 0;
-gap: 25px;
 }
 
 .carousel {
@@ -288,13 +286,20 @@ gap: 25px;
   #item-left {
     max-width: 1420px;
     position: relative;
-    left: -1400px;
-  }
+    right: 0px;
+   }
 
   #item-active {
     max-width: 1420px;
     position: relative;
     left: -950px;
+    z-index: 3;
+  }
+
+  #item-right {
+    max-width: 1420px;
+    position: relative;
+    left: -1900px;
   }
 
   @keyframes move-right {
@@ -316,16 +321,11 @@ gap: 25px;
     animation-name: move-left;
     animation-duration: 5s;
   }
-  
-  .hidden {
+  .carousel-adaptive-wrapper {
     display: none;
   }
-
-/*.inside:nth-child(5), .inside:nth-child(6) {
-    display: none;
-}*/
-
-.paginations {
+  
+ .paginations {
 display: flex;
 justify-content: center;
 margin-bottom: 55px;
@@ -1286,16 +1286,135 @@ letter-spacing: 2px;
     p.section-about {
         margin-left: 20px;
         margin-right: 20px;
+        margin-bottom: 0;
     }
-    .content {
+    .carousel-wrapper {
+        display: none;
+    }
+    .carousel-adaptive-wrapper {
+        position: relative;
+        height: 600px;
+    }
+
+    .carousel-adaptive {
+       /* display: flex;
+        justify-content: space-around;
+        padding-bottom: 20px;*/
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+      }
+      
+      .items-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
+      
+      .item {
+        display: none;
+        position: relative;
+        animation: 0.5s ease-in-out;
+        margin: 0 auto;
+      }
+      
+      .active,
+      .next {
+        display: block;
+      }
+      
+      .next {
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+      
+      .control {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 15%;
+        cursor: pointer;
+      }
+      
+      .control.left {
+        left: 0;
+        right: auto;
+      }
+      
+      .control.right {
+        right: 0;
+        left: auto;
+      }
+      
+      .arrow {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        font-weight: bold;
+      }
+      
+      .arrow.right {
+        right: 50%;
+      }
+      
+      .to-left {
+        animation-name: left;
+      }
+      
+      .from-right {
+        animation-name: right;
+      }
+      
+      .to-right {
+        animation-name: right;
+        animation-direction: reverse;
+      }
+      
+      .from-left {
+        animation-name: left;
+        animation-direction: reverse;
+      }
+      
+      @keyframes left {
+        from {
+          left: 0;
+        }
+        to {
+          left: -100%;
+        }
+      }
+      
+      @keyframes right {
+        from {
+          left: 100%;
+        }
+        to {
+          left: 0;
+        }
+      }
+      
+   .content {
         display: flex;
         justify-content: space-around;
         padding-bottom: 20px;
     }
-    .carret {
+   /* .carousel {
+        width: 450px; 
+    }
+      .images-items {
+        gap: 0; 
+      }
+   /* .carret {
         display: inline-flex;
         padding-top: 40px;
-    }
+    }*/
     .pagination {
         position: relative;
     }
@@ -1339,8 +1458,8 @@ letter-spacing: 2px;
     background: lightgray 50% / cover no-repeat;
     margin: 0 auto;
 }
-    img.inside:nth-child(2), img.inside:nth-child(3){
-    display: none;
+    /*img.inside:nth-child(2), img.inside:nth-child(3){
+    display: none;*/
   }
   .favorites-items {
     width: auto;
@@ -1434,5 +1553,4 @@ letter-spacing: 2px;
         .footer hr {
             width: 100%;
         }
-}
 }

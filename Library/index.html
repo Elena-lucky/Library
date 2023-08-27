@@ -50,13 +50,12 @@
         <h2 class="section-title">About</h2>
        <hr>
        <p class="section-about">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside </p>
-       <img src="./assets/img/Carret_Left.svg" alt="carret" class="carret" id="btn-left">
        <div class="carousel-wrapper" id="carousel-wrapper">
           <div class="carousel" id="carousel">
             <div class="content">
               <div class="images-items" id="item-left">
-               <img src="./assets/img/image1.png" alt="library" class="inside">
-               <img src="./assets/img/image2.png" alt="library" class="inside">
+                <img src="./assets/img/image1.png" alt="library" class="inside">
+                <img src="./assets/img/image2.png" alt="library" class="inside">
                <img src="./assets/img/image3.png" alt="library" class="inside">
               </div>
               <div class="images-items" id="item-active">
@@ -72,7 +71,33 @@
             </div> 
           </div>
        </div>
-       <img src="./assets/img/Carret_Right.svg" alt="carret" class="carret" id="btn-right">
+       <div class="carousel-adaptive-wrapper">
+        <div class="carousel-adaptive">
+          <div class="items-container">
+           <div class="item active">
+            <img class="project-image" src="assets/img/image1.png" alt="library">
+           </div>
+           <div class="item">
+             <img class="project-image" src="assets/img/image2.png" alt="library">
+           </div>
+           <div class="item">
+             <img class="project-image" src="assets/img/image3.png" alt="library">
+           </div>
+           <div class="item">
+             <img class="project-image" src="assets/img/image4.png" alt="library">
+            </div>
+            <div class="item">
+             <img class="project-image" src="assets/img/image5.png" alt="library">
+            </div>
+           </div>
+           <div class="control left">
+             <div class="arrow left">&lt;</div>
+           </div>
+           <div class="control right">
+            <div class="arrow right">&gt;</div>
+         </div>
+        </div>
+       </div>
        <div class="paginations">
          <div class="pagination">
            <button class="buttonPagination buttonPaginationOne" id="pagin-left"></button>
