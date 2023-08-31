@@ -110,6 +110,59 @@ document.querySelector('.control.right').addEventListener('click', function() {
 	}
 });
 
+document.querySelector('.control.left').removeEventListener('click', function() {
+	if (currentItem = 0) {
+    document.querySelector(".control.left").style.opacity = "0.5";
+    document.querySelector(".control.left").classList.add('disable');
+	}
+});
+
+/*document.querySelector('.buttonPagination').addEventListener('click', function() {
+	if (isEnabled) {
+		previousItem(currentItem);
+	}
+});
+
+/*document.querySelector('.control.right').addEventListener('click', function() {
+	if (isEnabled) {
+		nextItem(currentItem);
+	}
+});*/
+
+/*document.querySelector('.tag').removeEventListener('click', function() {
+	if (currentItem = 0) {
+		PAGIN_LEFT.style.opacity = "0.5";
+    PAGIN_LEFT.classList.add('disabled');
+	}
+});*/
+
+window.onload = function () {
+  addTagsClickHandler();
+}
+
+const addTagsClickHandler = () => {
+  document.querySelector('.strategies__tags').addEventListener('click', (e) => {
+    if (e.target.classList.contains('tag')) {
+      let clickedTag = e.target;
+      removeSelectedTags();
+      selectClickedTag(clickedTag);
+    }
+  })
+} 
+
+const removeSelectedTags = () => {
+  let tags = document.querySelectorAll('.strategies__tags .tag');
+  tags.forEach(tag => {
+    tag.classList.remove('tag_selected');
+    tag.classList.add('tag_bordered');
+  })
+}
+
+const selectClickedTag = (clickedTag) => {
+  clickedTag.classList.add('tag_selected');
+  clickedTag.classList.remove('tag_bordered');
+}
+
 /*document.querySelector('.control.right').removeEventListener('click', function() {
 	if (currentItem = 4) {
 		items[currentItem].addEventListener('animationend');
@@ -142,4 +195,64 @@ document.getElementById("burger").addEventListener('click', event => {
 document.body.addEventListener('click', event => {
     if (event._isClickWithInMenu) return;
     document.querySelector(".header").classList.remove("open")
+});
+
+//секция favorites//
+
+const radioButtons = document.querySelectorAll('input[name="favorites"]');
+const cards = document.querySelectorAll('.bg-description');
+let visibleRange = [0, 3];
+
+
+function fadeOutCards() {
+   cards.forEach(card => {
+      card.style.transition = 'opacity 0.5s ease';
+      card.style.opacity = 0;
+      card.style.pointerEvents = 'none';
+   });
+}
+
+
+function fadeInCards(start, end) {
+   for (let i = start; i <= end; i++) {
+      cards[i].style.transition = 'opacity 0.5s ease';
+      cards[i].style.opacity = 1;
+      cards[i].style.pointerEvents = 'auto';
+   }
+}
+
+radioButtons[0].checked = true;
+
+function showAllCards() {
+  cards.forEach(card => {
+     card.classList.remove('hidden');
+  });
+}
+
+fadeInCards(visibleRange[0], visibleRange[1]);
+
+radioButtons.forEach((radio, index) => {
+  radio.addEventListener('change', () => {
+     fadeOutCards();
+
+     switch (radio.value) {
+        case 'winter':
+           visibleRange = [0, 3];
+           break;
+        case 'spring':
+           visibleRange = [4, 7];
+           break;
+        case 'summer':
+           visibleRange = [8, 11];
+           break;
+        case 'autumn':
+           visibleRange = [12, 15];
+           break;
+     }
+
+     setTimeout(() => {
+        fadeInCards(visibleRange[0], visibleRange[1]);
+        showAllCards(); 
+     }, 500); 
+  });
 });
