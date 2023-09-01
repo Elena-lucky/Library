@@ -37,7 +37,8 @@ body {
     padding: 20px;
     margin: 0;
     display: flex; 
-    justify-content: space-between;    
+    justify-content: space-between; 
+    position: relative;   
 }
 
 h1.titul {
@@ -120,13 +121,6 @@ h1.titul {
     gap: 30px;
     height: 50px;
 }
-/*.nav-list {
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}*/
 
 .nav-item:not(:last-child) {
     margin-right: 20px;
@@ -174,6 +168,54 @@ a {
     padding: 0;
     
 }
+
+.drop-menu-no-auth, .drop-menu-with-auth {
+visibility: hidden;
+width: 80px;
+height: 115px;
+position: absolute;
+top: 60px;
+right: 20px;
+z-index: 10;
+background-color: #FFF;
+}
+
+.drop-menu-no-auth.visible {
+    visibility: visible;
+}
+
+.drop-menu-no-auth h4, .drop-menu-with-auth h4 {
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+} 
+
+.drop-menu-no-auth hr, .drop-menu-with-auth hr {
+    width: 40px;
+    background: #BB945F;
+    margin-top: 0;
+}
+
+.profile {
+width: 48px;
+height: 20px;
+text-align: center;
+margin: -15px auto 5px auto;
+
+
+}
+
+.drop-menu-text {
+width: 71px;
+height: 50px;
+font-weight: 400;
+margin: 0 auto;
+text-align: center;
+}  
+
 .welcome {
     position: relative;
     max-width: 1440px;
@@ -1316,6 +1358,10 @@ letter-spacing: 2px;
     .nav-list {
         margin-top: 49px;
         }
+
+   .drop-menu-no-auth, .drop-menu-with-auth {
+        right: 90px;
+    }
     .about {
         margin: 0 30px;
     }
@@ -1499,10 +1545,12 @@ letter-spacing: 2px;
 .favorites {
     height: 2629px;
     overflow: visible;
+    position: relative;
 }
 
 .seasons-container {
-position: relative;
+    position: sticky;
+    top: 0;
 }
 .seasons {
     position: sticky;

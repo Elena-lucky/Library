@@ -256,3 +256,49 @@ radioButtons.forEach((radio, index) => {
      }, 500); 
   });
 });
+
+// drop menu no auth //
+
+/*document.addEventListener('click', function(event) {
+  let id = event.target.dataset.toggleId;
+  if (!id) return;
+
+  let elem = document.getElementById(id);
+
+  elem.hidden = !elem.hidden;
+});
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === "Escape") {
+       document.querySelector(".drop-menu-no-auth").classList.remove("hidden")
+  }
+});
+document.body.addEventListener('click', event => {
+  if (event._isClickWithInMenu) return;
+  document.querySelector(".drop-menu-no-auth").classList.remove("hidden")
+});*/
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("drop-menu-no-auth").addEventListener("click", function() {
+      document.querySelector(".drop-menu-no-auth").classList.toggle("visible")
+  })
+})
+
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === "Escape") {
+       document.querySelector(".drop-menu-no-auth").classList.remove("visible")
+  }
+});
+
+
+document.getElementById("profile").addEventListener('click', event => {
+  event._isClickWithInProfile = true;
+});
+document.getElementById("drop-menu-no-auth").addEventListener('click', event => {
+  event._isClickWithInProfile = true;
+});
+document.body.addEventListener('click', event => {
+  if (event._isClickWithInProfile) return;
+  document.querySelector(".drop-menu-no-auth").classList.remove("visible")
+});
