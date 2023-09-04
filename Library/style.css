@@ -214,7 +214,11 @@ height: 50px;
 font-weight: 400;
 margin: 0 auto;
 text-align: center;
-}  
+} 
+
+.drop-menu-text {
+    cursor: pointer;
+}
 
 .welcome {
     position: relative;
@@ -621,6 +625,7 @@ font-weight: 700;
 line-height: normal;
 letter-spacing: 1px;
 transition: 1s linear;
+background-color: #FFF;
 }
 
 button:hover {
@@ -1184,7 +1189,178 @@ line-height: 40px; /* 200% */
 letter-spacing: 2px;
 }
 
+.modal-card-title {
+width: 81px;
+height: 20px;
+margin: 20px auto 0;
+font-family: Forum;
+font-size: 20px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0.02em;
+}
+
+.close-btn {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    width: 15px;
+    height: 15px;
+    border: 3px;
+    z-index: 30;
+    margin: 0;
+    padding: 0;
+    transition: none;
+}
+
+.close-btn:hover {
+    border-radius: none;
+    border: none;
+    background: none;  
+    cursor: pointer;
+}
+
+.close-btn span {
+display: block;
+position: absolute;
+width: 22px;
+height: 3px;
+left: 0;
+background-color: #0C0C0E;
+}
+
+.close-btn span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+    background-color: #0C0C0E;
+}
+
+.close-btn span:nth-child(2) {
+    transform: translateY(0) rotate(-45deg);
+}
+
+.form-register, .form-register2 {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 200px;
+    height: 280px;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+.form-register-inside {
+    font-family: Inter;
+font-size: 15px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0.02em;
+text-align: center;
+margin: 0;
+}
+
+.form-register input, .form-register2 input  {
+    width: 200px;
+    height: 20px;
+    border: 1px solid #BB945F;
+}
+
+.decision {
+   margin-left: 0;
+   margin-top: 10px;
+}
+
+.add-text {
+    margin-left: 25px;
+    margin-top: 10px;
+    font-family: Inter;
+font-size: 10px;
+font-weight: 400;
+line-height: 12px;
+letter-spacing: 0em;
+text-align: left;
+}
+
+.add-text span {
+    text-decoration: underline;
+    letter-spacing: 0.02em;
+    font-family: Inter;
+font-weight: 700;
+letter-spacing: 1px;
+text-align: center;
+}
+
+/*.modal-login {
+   /* position: fixed;
+    top: calc(50% - 131px);
+    left: calc(50% - 125px);
+    overflow: hidden;
+    width: 250px;
+    height: 262px;
+    z-index: 50;
+    background-color: #FFFFFF;
+}*/
+
+.modal-login-fon, .modal-register-fon {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99998;
+    background-color: rgba(0, 0, 0, .3);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s, visibility .4s;
+}
+
+.modal-login, .modal-register {
+    position: relative;
+    width: 250px;
+    height: 262px;
+    z-index: 1;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 17px -7px rgba(34, 60, 80, 0.2);
+    transform: scale(0);
+    transition: transform .8s;
+}
+
+.modal-register {
+height: 382px;
+}
+
+.modal-login-fon.opened, .modal-register-fon.opened {
+    visibility: visible;
+    opacity: 1;
+}
+.modal-login-fon.opened .modal-login, .modal-register-fon.opened .modal-register {
+    transform: scale(1);
+}
+
+.modal-login .modal-card-title {
+   width: 56px;
+}
+
+.form-register2 {
+    width: 200px;
+    height: 160px;
+    border: 1px;
+}
+
+
 @media screen and (max-width: 1430px)  {
+
+    html {
+        overflow-x: hidden;
+    }
+
+    body {
+        overflow-x: hidden; 
+    }
     .about {
         height: auto;
     }
@@ -1556,25 +1732,27 @@ letter-spacing: 2px;
     position: sticky;
     top: 0;
     z-index: 5;
-  } 
+ } 
 
-  .favorites-items {
+.favorites-items {
     width: auto;
   }
-   .bg-description {
+
+  .bg-description {
     width: 550px;
     height: 555px;
     margin: 0 0 40px 69px;
     padding: 0;
    }
-   img.books {
+
+img.books {
     width: 200px;
     height: 300px;
     left: 390px;
     flex-shrink: 0;
    }
 
-   #card5, #card6, #card7, #card8 {
+#card5, #card6, #card7, #card8 {
     top: -2380px;
 }
 
@@ -1586,81 +1764,96 @@ letter-spacing: 2px;
     top: -7140px;
 }
 
-   .coffee {
-    padding-top: 0;
-   }
-   .menu {
+.coffee {
+padding-top: 0;
+}
+.menu {
     display: block;
-    }
-    .card {
-        width: 100%;
-        margin-bottom: 40px;
-    }
-    .card-second {
-        width: 100%;
-    }
-    .map {
-        width: 100%;
-        height: auto;
-    }
-    .library-card {
-     height: auto;
-     margin-top: 65px;
-     }
-     .gold-bg {
-        margin: 20px 20px 89px 20px;
-        width: 560px;
-        height: 272px;
-     }
-    .cards {
-        display: block;
-        height: auto;
-        }
-        .find-card {
-            width: 600px;
-            height: auto;
-            flex-shrink: 0;
-            margin: 0 auto 21px;
-        }
-        p.gold-inside {
-            font-size: 30px;
-        }
-        input#name, input#number {
-            width: 520px;
-            height: 66px;
-        }
-        button.check {
-           text-align: center;
-            width: 40%;
-            margin-left: 120px;
-        }
-        .get-card {
-            width: 600px;
-            height: 223px;
-            flex-shrink: 0;
-            margin: 0 auto;
-        }
-        .get-card h4 { 
-            position: static;
-            text-align: center;
-        }
-        .get-card p {
-            display: none;
-        }
-        p.tablet-size {
-            display: block;
-            text-align: center;
-        }
-        .buttons {
-            margin: 0 auto;
-            bottom: 0;
-            left: 0;
-            justify-content: center;
-        }
-        .frame-4 hr {
-            width: 100%;
-        }
-        .footer hr {
-            width: 100%;
-        }
+}
+.card {
+width: 100%;
+margin-bottom: 40px;
+}
+
+.card-second {
+width: 100%;
+}
+.map {
+width: 100%;
+height: auto;
+}
+
+.library-card {
+height: auto;
+margin-top: 65px;
+}
+
+.gold-bg {
+margin: 20px 20px 89px 20px;
+width: 560px;
+height: 272px;
+}
+
+.cards {
+display: block;
+height: auto;
+}
+
+.find-card {
+width: 600px;
+height: auto;
+flex-shrink: 0;
+margin: 0 auto 21px;
+}
+
+p.gold-inside {
+font-size: 30px;
+}
+
+input#name, input#number {
+width: 520px;
+height: 66px;
+}
+
+button.check {
+text-align: center;
+width: 40%;
+margin-left: 120px;
+}
+
+.get-card {
+width: 600px;
+height: 223px;
+flex-shrink: 0;
+margin: 0 auto;
+}
+
+.get-card h4 { 
+position: static;
+text-align: center;
+}
+
+.get-card p {
+display: none;
+}
+
+p.tablet-size {
+display: block;
+text-align: center;
+}
+
+.buttons {
+margin: 0 auto;
+bottom: 0;
+left: 0;
+justify-content: center;
+}
+
+.frame-4 hr {
+width: 100%;
+}
+
+.footer hr {
+width: 100%;
+}
 }

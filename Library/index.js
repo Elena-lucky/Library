@@ -302,3 +302,67 @@ document.body.addEventListener('click', event => {
   if (event._isClickWithInProfile) return;
   document.querySelector(".drop-menu-no-auth").classList.remove("visible")
 });
+
+// модальные окна //
+
+// for login //
+
+document.getElementById("modal-login-open-btn").addEventListener("click", function() {
+  document.getElementById("modal-for-login").classList.add("opened")
+})
+
+document.getElementById("btn-for-login-register").addEventListener("click", function() {
+  document.getElementById("modal-for-login").classList.add("opened")
+})
+
+// Закрыть модальное окно
+document.getElementById("close-modal-for-login-btn").addEventListener("click", function() {
+  document.getElementById("modal-for-login").classList.remove("opened")
+})
+
+// Закрыть модальное окно при нажатии на Esc
+window.addEventListener('keydown', (e) => {
+  if (e.key === "Escape") {
+      document.getElementById("modal-for-login").classList.remove("opened")
+  }
+});
+
+// Закрыть модальное окно при клике вне его
+document.querySelector("#modal-for-login .modal-login").addEventListener('click', event => {
+  event._isClickWithInModal = true;
+});
+document.getElementById("modal-for-login").addEventListener('click', event => {
+  if (event._isClickWithInModal) return;
+  event.currentTarget.classList.remove('opened');
+});
+
+// for register //
+
+document.getElementById("modal-register-open-btn").addEventListener("click", function() {
+  document.getElementById("modal-for-register").classList.add("opened")
+})
+
+document.getElementById("btn-for-open-register").addEventListener("click", function() {
+  document.getElementById("modal-for-register").classList.add("opened")
+})
+
+// Закрыть модальное окно
+document.getElementById("close-modal-for-register-btn").addEventListener("click", function() {
+  document.getElementById("modal-for-register").classList.remove("opened")
+})
+
+// Закрыть модальное окно при нажатии на Esc
+window.addEventListener('keydown', (e) => {
+  if (e.key === "Escape") {
+      document.getElementById("modal-for-register").classList.remove("opened")
+  }
+});
+
+// Закрыть модальное окно при клике вне его
+document.querySelector("#modal-for-register .modal-register").addEventListener('click', event => {
+  event._isClickWithInModal = true;
+});
+document.getElementById("modal-for-register").addEventListener('click', event => {
+  if (event._isClickWithInModal) return;
+  event.currentTarget.classList.remove('opened');
+});

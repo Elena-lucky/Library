@@ -39,8 +39,8 @@
           </div>
           <hr>
           <div class="drop-menu-text">
-            <p class="drop-menu-log">Log In</p>
-            <p class="drop-menu-log">Register</p>
+            <p class="drop-menu-log" id="modal-login-open-btn">Log In</p>
+            <p class="drop-menu-log" id="modal-register-open-btn">Register</p>
           </div>
          </div>
 
@@ -54,8 +54,8 @@
             <p class="drop-menu-log">Log Out</p>
           </div>
          </div>
-        </div> 
-     </div>  
+        </div>
+     </div>
    </header>
  
    <main>
@@ -483,10 +483,10 @@
           <p class="tablet-size">You will be able to see a reader card after logging into account or you can register a new account</p>
           <div class="buttons">
             <form>
-              <button>Sign Up</button>
+              <button id="btn-for-open-register">Sign Up</button>
             </form>
             <form>
-              <button>Log in</button>
+              <button id="btn-for-login-register">Log in</button>
             </form>
           </div>
         </div>
@@ -517,7 +517,70 @@
       </div>
    </div>
   </footer>
-  <script src="./index.js"></script>
- </div>
+
+  <div class="modal-register-fon" id="modal-for-register">
+    <div class="modal-register">
+      <h3 class="modal-card-title">REGISTER</h3>
+      <button class="close-btn" id="close-modal-for-register-btn">
+       <span></span><span></span>
+      </button>
+  
+      <div class="form-register">
+       <p class="form-register-inside">First name</p>
+       <form>
+         <label for="first-name"></label>
+          <input type="text" id="first-name">
+       </form>
+       <p class="form-register-inside">Last name</p>
+       <form>
+         <label for="last-name"></label>
+          <input type="text" id="last-name">
+       </form>
+       <p class="form-register-inside">E-mail</p>
+       <form>
+         <label for="mail"></label>
+          <input type="email" id="mail">
+       </form>
+       <p class="form-register-inside">Password</p>
+       <form>
+         <label for="pin"></label>
+          <input type="password" id="pin">
+       </form>
+       <form>
+         <button class="decision">Sign up</button>
+       </form>
+     </div> 
+     <p class="add-text">Already have an account? <span>     Login</span></p>
+    </div>
+  </div>
+
+  <div class="modal-login-fon" id="modal-for-login">
+    <div class="modal-login">
+      <h3 class="modal-card-title">LOGIN</h3>
+      <button class="close-btn" id="close-modal-for-login-btn">
+       <span></span><span></span>
+      </button>
+  
+      <div class="form-register2">
+       <p class="form-register-inside">E-mail or readers card</p>
+       <form>
+         <label for="mail-reader-card"></label>
+          <input type="email" id="mail-reader-card">
+       </form>
+       <p class="form-register-inside">Password</p>
+       <form>
+         <label for="pin2"></label>
+          <input type="password" id="pin2">
+       </form>
+       <form>
+         <button class="decision">Log in</button>
+       </form>
+     </div> 
+     <p class="add-text">Don’t have an account? <span>Register</span></p>
+    </div>
+  </div>
+
+ </div> 
+ <script src="./index.js"></script>
 </body>
 </html>
