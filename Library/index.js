@@ -171,6 +171,7 @@ const selectClickedTag = (clickedTag) => {
 
 
 
+// бургер меню //
 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("burger").addEventListener("click", function() {
@@ -259,25 +260,6 @@ radioButtons.forEach((radio, index) => {
 
 // drop menu no auth //
 
-/*document.addEventListener('click', function(event) {
-  let id = event.target.dataset.toggleId;
-  if (!id) return;
-
-  let elem = document.getElementById(id);
-
-  elem.hidden = !elem.hidden;
-});
-
-window.addEventListener('keydown', (e) => {
-  if (e.key === "Escape") {
-       document.querySelector(".drop-menu-no-auth").classList.remove("hidden")
-  }
-});
-document.body.addEventListener('click', event => {
-  if (event._isClickWithInMenu) return;
-  document.querySelector(".drop-menu-no-auth").classList.remove("hidden")
-});*/
-
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("drop-menu-no-auth").addEventListener("click", function() {
       document.querySelector(".drop-menu-no-auth").classList.toggle("visible")
@@ -303,6 +285,33 @@ document.body.addEventListener('click', event => {
   document.querySelector(".drop-menu-no-auth").classList.remove("visible")
 });
 
+// drop menu with auth //
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("icon-named").addEventListener("click", function() {
+      document.querySelector(".drop-menu-with-auth").classList.toggle("visible")
+  })
+})
+
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === "Escape") {
+       document.querySelector(".drop-menu-with-auth").classList.remove("visible")
+  }
+});
+
+
+document.getElementById("profile-auth").addEventListener('click', event => {
+  event._isClickWithInProfile = true;
+});
+document.getElementById("icon-named").addEventListener('click', event => {
+  event._isClickWithInProfile = true;
+});
+document.body.addEventListener('click', event => {
+  if (event._isClickWithInProfile) return;
+  document.querySelector(".drop-menu-with-auth").classList.remove("visible")
+});
+
 // модальные окна //
 
 // for login //
@@ -312,7 +321,7 @@ document.getElementById("modal-login-open-btn").addEventListener("click", functi
 })
 
 document.getElementById("btn-for-login-register").addEventListener("click", function() {
-  document.getElementById("modal-for-login").classList.add("opened")
+  document.getElementById("modal-for-login").classList.add("opened");
 })
 
 // Закрыть модальное окно
@@ -351,6 +360,10 @@ document.getElementById("close-modal-for-register-btn").addEventListener("click"
   document.getElementById("modal-for-register").classList.remove("opened")
 })
 
+document.getElementById("btn-for-register").addEventListener("click", function() {
+  document.getElementById("modal-for-register").classList.remove("opened")
+})
+
 // Закрыть модальное окно при нажатии на Esc
 window.addEventListener('keydown', (e) => {
   if (e.key === "Escape") {
@@ -365,4 +378,120 @@ document.querySelector("#modal-for-register .modal-register").addEventListener('
 document.getElementById("modal-for-register").addEventListener('click', event => {
   if (event._isClickWithInModal) return;
   event.currentTarget.classList.remove('opened');
+});
+
+// for my-profile //
+
+document.getElementById("modal-my-profile-open-btn").addEventListener("click", function() {
+  document.getElementById("modal-my-profile").classList.add("opened")
+})
+
+// Закрыть модальное окно
+document.getElementById("close-modal-for-my-profile-btn").addEventListener("click", function() {
+  document.getElementById("modal-my-profile").classList.remove("opened")
+})
+
+// Закрыть модальное окно при нажатии на Esc
+window.addEventListener('keydown', (e) => {
+  if (e.key === "Escape") {
+      document.getElementById("modal-my-profile").classList.remove("opened")
+  }
+});
+
+// Закрыть модальное окно при клике вне его
+document.querySelector("#modal-my-profile .modal-my-profile").addEventListener('click', event => {
+  event._isClickWithInModal = true;
+});
+document.getElementById("modal-my-profile").addEventListener('click', event => {
+  if (event._isClickWithInModal) return;
+  event.currentTarget.classList.remove('opened');
+});
+
+// local storage //
+
+const registrationForm = document.getElementById('registrationForm');
+const usernameInput = document.getElementById('first-name');
+const userLastnameInput = document.getElementById('last-name');
+const emailInput = document.getElementById('mail');
+const passwordInput = document.getElementById('pin');
+
+
+registrationForm.addEventListener('submit', function (e) {
+  e.preventDefault(); 
+
+  const username = usernameInput.value;
+  const userLastname = userLastnameInput.value;
+  const email = emailInput.value;
+  const password = passwordInput.value;
+  
+  
+  localStorage.setItem('username', username);
+  localStorage.setItem('userLastname', userLastname);
+  localStorage.setItem('email', email);
+  localStorage.setItem('password', password);
+
+});
+
+// создаем именную аватарку //
+
+document.addEventListener('DOMContentLoaded', function () {
+  const username = localStorage.getItem('username');
+  const userLastname = localStorage.getItem('userLastname');
+
+  if (username && userLastname) {
+    const firstLetterOfName = username.charAt(0).toUpperCase();
+    const firstLetterOfLastname = userLastname.charAt(0).toUpperCase();
+    const initialsText = firstLetterOfName + firstLetterOfLastname;
+    const iconProfile = document.getElementById('icon-named');
+    iconProfile.innerHTML = initialsText;
+    const iconProfileInModal = document.getElementById('logo-for-avatar');
+    iconProfileInModal.innerHTML = initialsText;
+    const usernamesInModal = document.getElementById('current-users-name');
+    usernamesInModal.innerHTML = username + userLastname;
+  }
+
+  document.getElementById("btn-for-register").addEventListener("click", function() {
+    document.getElementById("icon-named").classList.add("opened");
+    document.getElementById("drop-menu-no-auth").classList.add("hidden");
+  })
+});
+
+// проверка валидности email //
+
+function isValidEmail(email) {
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  return emailPattern.test(email);
+}
+
+// проверяем длину пароля
+function isPasswordValid(password) {
+  return password.length >= 8;
+}
+
+
+emailInput.addEventListener('input', function () {
+  const emailValue = emailInput.value;
+  const isValid = isValidEmail(emailValue);
+
+  if (isValid) {
+    emailInput.classList.remove('invalid');
+    emailInput.classList.add('valid');
+  } else {
+    emailInput.classList.remove('valid');
+    emailInput.classList.add('invalid');
+  }
+});
+
+
+passwordInput.addEventListener('input', function () {
+  const passwordValue = passwordInput.value;
+  const isPasswordValidValue = isPasswordValid(passwordValue);
+
+  if (isPasswordValidValue) {
+    passwordInput.classList.remove('invalid');
+    passwordInput.classList.add('valid');
+  } else {
+    passwordInput.classList.remove('valid');
+    passwordInput.classList.add('invalid');
+  }
 });

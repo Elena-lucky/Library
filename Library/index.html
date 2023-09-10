@@ -32,6 +32,7 @@
             </ul>
          </nav>  
          <img src="./assets/img/icon_profile.svg" id="drop-menu-no-auth" alt="icon" class="icon-profile">
+         <div class="icon-profile-named" id="icon-named"></div>
          
          <div class="drop-menu-no-auth">
           <div class="profile" id="profile">
@@ -45,12 +46,12 @@
          </div>
 
          <div class="drop-menu-with-auth">
-          <div class="profile">
+          <div class="profile" id="profile-auth">
             <h4>Profile</h4>
           </div>
           <hr>
           <div class="drop-menu-text">
-            <p class="drop-menu-log">My profile</p>
+            <p class="drop-menu-log" id="modal-my-profile-open-btn">My profile</p>
             <p class="drop-menu-log">Log Out</p>
           </div>
          </div>
@@ -525,7 +526,7 @@
        <span></span><span></span>
       </button>
   
-      <div class="form-register">
+      <div class="form-register" id="registrationForm">
        <p class="form-register-inside">First name</p>
        <form>
          <label for="first-name"></label>
@@ -547,7 +548,7 @@
           <input type="password" id="pin">
        </form>
        <form>
-         <button class="decision">Sign up</button>
+         <button type="submit" class="decision" id="btn-for-register">Sign up</button>
        </form>
      </div> 
      <p class="add-text">Already have an account? <span>     Login</span></p>
@@ -580,6 +581,60 @@
     </div>
   </div>
 
+  <div class="modal-my-profile-fon" id="modal-my-profile">
+    <div class="modal-my-profile">
+      <div class="profile-info">
+        <form>
+          <label for="logo-for-avatar"></label>
+           <input type="text" id="logo-for-avatar">
+        </form>
+        <form>
+          <label for="current-users-name"></label>
+          <input type="text" id="current-users-name">
+        </form>
+      </div>
+      <div class="my-profile">
+        <h3 class="modal-card-title">MY PROFILE</h3>
+        <button class="close-btn" id="close-modal-for-my-profile-btn">
+         <span></span><span></span>
+        </button>
+        <div class="cards-profile">
+          <div class="visits-info">
+           <p class="form-register-inside-profile">Visits</p>
+           <img src="./assets/img/Union.png" alt="union" class="union-profile">
+           <input type="button" value="1" data-counter>
+          </div>
+          <div class="bonuses-info">
+            <p class="form-register-inside-profile">Bonuses</p>
+            <img src="./assets/img/Star1.png" alt="star" class="union-profile">
+            <input type="button" value="1" data-counter>
+          </div>
+          <div class="books-info">
+            <p class="form-register-inside-profile">Books</p>
+            <img src="./assets/img/book-small.png" alt="book-small" class="union-profile">
+            <input type="button" value="1" data-counter>
+          </div>
+        </div>  
+        <div class="rented-books">
+          <h3 class="rent-books">Rented books</h3>
+          <ul>
+            <li class="books-items">The Last Queen, Clive Irving</li>
+            <li class="books-items">Dominicana, Angie Cruz</li> 
+          </ul>
+        </div>
+        <div class="card-number">
+          <p class="form-register-inside-profile plus">Card number</p>
+            <form>
+             <label for="card-number"></label>
+               <input type="number" id="card-number" placeholder="F00234030">
+            </form>
+            <img src="./assets/img/icon-copy.png" alt="copy" class="union-card-profile"> 
+        </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+  
  </div> 
  <script src="./index.js"></script>
 </body>
