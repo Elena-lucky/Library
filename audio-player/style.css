@@ -18,7 +18,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: no-repeat center/80% url(assets/img/lemonade.png);
+    background: no-repeat center/80% url(assets/img/fon.png);
     background-color: rgba(255,255,255,0.5);
 }
 
@@ -41,8 +41,18 @@ body {
     color: #FFF;
 }
 
+.cover {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+
 .cover__img {
     width: 100%;
+    border-radius: 50%;
+    &.active {
+        animation: rotateAnimation 5s linear infinite;
+    }
 }
 
 .progress__container {
@@ -74,11 +84,21 @@ body {
 .btn {
     height: 45px;
     width: 45px;
+    cursor: pointer;
 }
 
 .btn img {
     height: 45px;
     width: 45px;  
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .footer {
@@ -95,3 +115,4 @@ body {
     cursor: pointer;
     color: black;
   }
+
