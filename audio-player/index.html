@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="player">
+      <div class="title">Now playing</div>
+      <div class="cover"><img class="cover__img" src="assets/img/cover1.png" alt="cover"></div>
+      <div class="song">Beyonce Don't Hurt Yourself</div>
+      <audio class="audio" src="assets/audio/Beyonce Don't Hurt Yourself.mp3"></audio>
+      <div class="progress__container">
+        <div class="progress"></div>
+      </div>
+      <div class="time">
+        <div class="current">0:00</div>
+        <div class="length"></div>
+      </div>
+      <div class="buttons">
+        <div class="btn prev"><img src="assets/img/backward.png" alt="btn"></div>
+        <div class="btn play"><img class="img__src" src="assets/img/play.png" alt="btn"></div>
+        <div class="btn next"><img src="assets/img/forward.png" alt="btn"></div>
+     </div>
+    </div>
+  </div>  
+  <footer class = "footer">
+      <div class="container">
+        <a href="https://rs.school/js/" target="_blank"><img src="https://rs.school/images/rs_school_js.svg" alt="logo"></a>
+        <a href="https://github.com/Elena-lucky" target="_blank">Elena Ivanova, 2023</a>
+      </div> 
+  </footer> 
+ <script src="main.js"></script>
+</body>
+</html>
