@@ -33,8 +33,21 @@ async function getPhoto(query) {
     };
 
     const searchInput = document.getElementById("search");
-    searchInput.addEventListener("input", (event) => {
-        getPhoto(event.target.value);
+    const searchBtn = document.getElementById("btn__search");
+    searchInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            const query = searchInput.value;
+            getPhoto(query);
+        }
     });
-getPhoto();
+    searchBtn.addEventListener("click", () => {
+        const query = searchInput.value;
+        getPhoto(query);
+    });
+
+    async function start() {
+        await getPhoto("random");
+        }
+      start();
+    
 
